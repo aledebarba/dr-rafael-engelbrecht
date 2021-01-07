@@ -1,65 +1,208 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Image from 'next/image'
+import Navbar from '../components/navbar'
 
 export default function Home() {
+  
   return (
-    <div className={styles.container}>
+    <div className="content">
       <Head>
-        <title>Create Next App</title>
+        <title>Dr Rafael Hengelbrecht</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <Navbar menu={[
+          {text:"Home", url:"#top"},
+          {text:"Áreas de atuação", url:"#areas"},
+          {text:"Formação", url:"#formacao"},
+          {text:"Publicação", url:"#publicacao"},
+          {text:"Atendimento", url:"#locais_de_atendimento"},
+          {text:"Contato", url:"#call_to_action"}
+      ]}/>
+        <div className="container-full hero">
+          <div className="container">
+            <div className="row">
+              <div className="col" style={{justifyContent:'center'}}>
+                <h1>Dr Rafael Engelbrecht</h1>
+                <h2>Cirurgião Vascular e Endovascular</h2>
+                <p>Rafael Engelbrecht é formado em Medicina pela Escola Paulista de Medicina - Universidade Federal de São Paulo e possui residência médica nas áreas de Cirurgia Geral, Cirurgia Vascular e Cirurgia Endovascular pela mesma Universidade.</p>
+                <button className="primary">
+                  Saiba mais
+                </button>
+              </div>
+              <div className="col foto">
+                <Image src="/images/hero__main-image.png" layout="responsive" width={533} height={639}/>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      <div id="areas">
+        <div className="container">
+          <h1>Áreas de Atuação</h1>
+          <h2>PRINCIPAIS ATUAÇÕES, TÉCNICAS E ÁREAS DE ATENDIMENTO ESPECIALIZADO</h2>
+          <div className="row">
+            <div className="col">
+              <div className="area">
+                <h3>Cirurgia Vascular e Endovascular</h3>
+                <ul>
+                  <li>Cirurgia Endovascular (minimamente invasiva)</li>
+                </ul>
+              </div>
+              <div className="area">
+                <h3>Doenças Venosas</h3>
+                <ul>
+                  <li>Insuficiência venosa</li>
+                  <li>Varizes, vasinhos - tratamento cirúrgico e escleroterapia</li>
+                  <li>Trombose venosa profunda (TVP), tromboflebite</li>
+                </ul>
+              </div>
+              <div className="area">
+                <h3>Doenças Arteriais</h3>
+                <ul>
+                  <li>Oclusão arterial crônica e aguda</li>
+                  <li>Feridas/úlceras</li>
+                </ul>
+              </div>
+              <div className="area">
+                <h3>Infecções</h3>
+                <ul>
+                  <li>Erisipela</li>
+                  <li>Celulite</li>
+                </ul>
+              </div>
+              <div className="area">
+                <h3>Outras áreas</h3>
+                <ul>
+                  <li>Cateteres: Port-o-cath, Permcath, PICC</li>
+                  <li>Fístula arteriovenosa para hemodiálise</li>
+                  <li>Doenças linfáticas (congênitas, adquiridas e pós-infecciosas)</li>
+                  <li>Doenças/Síndromes reumatológicas e auto-imunes com acometimento vascular</li>
+                  <li>Check-up vascula</li>
+                </ul>
+              </div>
+              <a href="https://linkedin.com" target="_blank" className="secondary">
+                <img src="/images/icon__linkedin.svg" alt="logo do linkedin"/>
+                Veja mais no Linkedin
+              </a>
+            </div>
+            <div className="col"  style={{justifyContent: "center"}}>
+            <Image src="/images/ilustracao__areas.png" layout="responsive" width={404} height={441}/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div id="formacao">
+      <div className="container">
+        <h1>Formação Acadêmica</h1>
+        <h2>CURSOS DE GRADUAÇÃO, PÓS GRADUAÇÃO, ESPECIALIZAÇÕES E RESIDÊNCIAS</h2>
+        <div className="row">
+          <div className="col">
+            <Image src="/images/marca__unifesp.png" width={514} height={298} alt="marca da unifesp - fachada estilizada do prédio" />
+            <Image src="/images/marca__epm.png" width={340} height={392} alt="marca da escola paulista de medicina - escudo mostrando uma cobra enrolana num tronco de árvore" />
+            <ul>
+              <li>Graduação em Medicina</li>
+              <li>Residência em Cirurgia Geral</li>
+              <li>Residência em Cirurgia Vascular</li>
+              <li>Residência em Cirurgia Endovascular</li>
+            </ul>
+            <a className="button secondary">
+              <img src="/images/icon__lattes.svg" alt="marca da plataforma lattes" />
+              Currículo Lattes
+            </a>
+          </div>
+          <div className="col">
+            <p>Ganhador do  <strong>2º Prêmio Emil Burihan</strong> da Sociedade Brasileira de Angiologia e Cirurgia Vascular no ano de 2016 (3º lugar).</p>
+            <p>Possui experiência de trabalho no Hospital do Rim, com pacientes transplantados renais em vias de acesso para hemodiálise. </p>
+            <p>Atualmente, trabalha como Cirurgião Vascular e Endovascular no Hospital 9 de Julho com pacientes internados, retaguarda de Pronto Socorro, cirurgias eletivas e consultas ambulatoriais.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="publicacao">
+      <div className="container">
+        <h1>Publicação</h1>
+        <div className="row">
+          <div className="col">
+            <img src='/images/livro.png' alt="capa do livro"/>
+            <a href="#" className='button secondary'>
+              <img src="/images/icon__book.svg" alt="icone de um livro" />Amazon</a>
+            <a href="#" className='button secondary'>
+              <img src="/images/icon__book.svg" alt="icone de um livro" />Editora Manole</a>
+          </div>
+          <div className="col">
+            <p><strong>Manual de Angiologia e Cirurgia Vascular e Endovascular (2020)</strong> - Editora Manole</p>
+            <h3>Participação: </h3>
+            <ul>
+              <li>Capítulo 6: Propedêutica linfática ao lado de Luis Carlos Uta Nakano</li>
+              <li>Capítulo 74: Complicações das angioplastias de carótida ao lado de Luis Carlos Uta Nakano</li>
+              <li>Capítulo 84: Angioplastia da veia cava inferior e do segmento ileofemoral na insuficiência venosa crônicaao lado de Samuel Tomaz Araújo e Ronald Luiz Gomes Flumignan.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="locais_de_atendimento">
+    <div className="container">
+        <h1>Locais de Atendimento</h1>
+        <h2></h2>
+        <div className="row">
+          <div className="col">
+            <img src="/images/logo__haoc.svg" alt="marca do hospital alemão oswaldo cruz"/>
+            <h3>Hospital Alemão Oswaldo Cruz</h3>
+          </div>
+          <div className="col">
+            <img src="/images/logo__hospital-sirio-libanes.svg"  alt="marca do hospital sírio libanês"/>
+            <h3>Hospital Sírio Libanês</h3>
+          </div>
+          <div className="col">
+            <img src="/images/logo__hospital-9-de-julho.svg"  alt="marca do hospital 9 de julho"/>
+            <h3>Hospital 9 de Julho</h3>
+          </div>
+          <div className="col">
+            <img src="/images/logo__consultorio.svg" alt="marca do consultorio particular"/>
+            <h3>Consultório Particular</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="call_to_action">
+      <div className="container">
+        <div className="row">
+          <div className="col cta__icon">
+            <img src="/images/cta__contact.png" />
+          </div>
+          <div className="col cta__message">
+            <p>Por favor, sinta-se a vontade para ligar em nossa clínica e conversar com o pessoal da recepção. Seu atendimento será rápido e atencioso.
+            <a href="#">11 3995-9852</a>
+            </p>  
+          </div>
+          <div className="col cta__adress">
+            <img src="/images/icon__place.svg" alt="alfinete de mapa" />
+            <p>
+            Rua Pamplona, 145 cj 134<br/>
+            Jardim Paulista<br />
+            São Paulo SP
+            </p>
+          </div>
+          <div className="col cta__button">
+            <a href="#" className="button primary">
+              <img src="/images/icon__arrow-right-squared.svg" alt="seta apontando para esquerda" />
+              Marque sua consulta
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div className="container">
+        <img src="/images/brand__white.png" alt="marca do consultaorio" />
+        <p>Esse site e seu conteúdo estão protegidos por leis de deireito autoral, tanto no brasil quanto no exterior. Antes de reproduzí-lo, no todo ou em parte, por favor entre em contato.</p>
+        <a href="#top">Voltar ao inicio</a>
+      </div>
+    </div>
     </div>
   )
 }
