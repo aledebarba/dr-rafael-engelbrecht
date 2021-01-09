@@ -85,7 +85,7 @@ export default function Home() {
                 Veja mais no Linkedin
               </a>
             </div>
-            <div className="col w50">  
+            <div className="col w50 areas__ilustracao">  
               <img src="/images/ilustracao__areas.png" />
             </div>
           </div>
@@ -178,34 +178,27 @@ export default function Home() {
       </div>
     </div>
     <div id="call_to_action">
-      <div className="container">
-        <div className="row">
-          <div className="col cta__icon">
+          <div className="cta__icon">
             <img src="/images/cta__contact.png" />
           </div>
-          <div className="col cta__message w25">
-            <p>Por favor, sinta-se a vontade para ligar em nossa clínica e conversar com o pessoal da recepção. Seu atendimento será rápido e atencioso.
+          <div className="cta__message">
+            Por favor, sinta-se a vontade para ligar em nossa clínica e conversar com o pessoal da recepção. Seu atendimento será rápido e atencioso.
             <a href="#">11 3995-9852</a>
-            </p>  
           </div>
-          <div className="col w25">
-            <div className="cta__address">
+          <div className="cta__address">
               <img src="/images/icon__place.svg" alt="alfinete de mapa" />
               <p>
-              Rua Pamplona, 145 cj 134<br/>
-              Jardim Paulista<br />
+              Rua Pamplona, 145 cj 134
+              Jardim Paulista
               São Paulo SP
               </p>
-            </div>
           </div>
-          <div className="col cta__button w25">
+          <div className="cta__button">
             <a href="#" className="button primary">
               <img src="/images/icon__arrow-right-squared.svg" alt="seta apontando para esquerda" />
               Marque sua consulta
             </a>
           </div>
-        </div>
-      </div>
     </div>
     <div id="footer">
       <div className="container">
