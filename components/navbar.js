@@ -1,15 +1,25 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components'
 
 const Navbar = props => {
     
+    const [ verticalScroll, setScroll ] = useState(0);
+    useEffect (()=>{
+        window.onscroll = () => {
+            // for browse compatibility purposes
+            var scrollvalue = window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0)
+            setScroll(scrollvalue);
+        }
+    }, [])
+    const scrolled = verticalScroll > 200 ? true : false;
+
     const menu = props.menu
-    
     function handleClick() {
         document.getElementById('toggle').checked=false
     }
 
     return (
-    <WithStyle>
+    <WithStyle scrolled={scrolled}>
         <div className='brand'>
             <img src='/images/brand__menu-icon.png' alt="brand-icon" />
         </div>
@@ -26,17 +36,19 @@ const Navbar = props => {
 export default Navbar
 
 const WithStyle = styled.div`
+
     z-index: 1000;
     width: 100vw;
-    height: 64px;
-    background-color: var(--white);
+    height: ${props => props.scrolled ? "40px" : "64px"};
+    background: ${props => props.scrolled ? "var(--blue)" : "var(--white)"};
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
     justify-content: left; 
-    box-shadow: 0px 1px 2px 0px #00000033;
+    box-shadow: 0px 1px 2px 1px #00000055;
+    transition: all 200ms linear;
 
     @media(min-width:768px) {
         flex-direction: row;
@@ -46,15 +58,22 @@ const WithStyle = styled.div`
 
     .brand {
         position: absolute;
-        top: 4px;
-        left: 4px;
+        top: ${props=>props.scrolled ? "-8px" : "4px"};
+        left: ${props=>props.scrolled ? "-16px" : "4px"};
+        transition: all 200ms linear;
+        
         @media(max-width:768px) {
             left: 50%;
             transform: translateX(-50%);
+            top: ${props=>props.scrolled ? "8px" : "4px"};
         }
+        
         img {             
-            height: 48px;
+            height: 56px;
             width: auto;
+            background-color: var(--white);
+            border-radius: 9999px;
+            box-shadow: 0px 0px 0px 2px var(--white);            
         }
     }
 
@@ -78,7 +97,7 @@ const WithStyle = styled.div`
         margin-top: 40px;
         padding: 0;
         list-style: none;
-        background-color: var(--white);
+        background-color: #ffffff00;
         display: none;
         @media(min-width:768px) {
             display: flex;
@@ -93,23 +112,24 @@ const WithStyle = styled.div`
         }
         a {
             font-weight: var(--font-semibold);
-            color: var(--blue);
-            transition: border-bottom 500ms ease;
-            border-bottom: 1px solid #ffffff00;
+            color: ${props => props.scrolled ? "var(--white)" : "var(--blue)"};
+            transition: all 200ms ease;
             &:hover {
-                color: var(--red);
-                border-bottom: 1px solid var(--red);
-                transition: border-bottom 500ms ease;
+                color: ${props=>props.scrolled ? "navajowhite" : "var(--red)"};
+                transition: all 200ms ease;
             }
         }
     }
-    #toggle:checked ~ ul { display: flex };
+    #toggle:checked ~ ul { 
+        display: flex;
+        background: ${props=>props.scrolled ? "var(--blue)" : "var(--white)"};
+    };
 
     .menu__icon {
-        --color: var(--blue);
+        --color: ${props => props.scrolled ? "var(--white)" : "var(--blue)"};
         --thickness: 4px;
         position: absolute;
-        top: 16px;
+        top: ${props=> props.scrolled ? "12px" : "22px"};
         left: 16px;
         width: 20px;
         height: 20px;

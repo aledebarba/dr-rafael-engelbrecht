@@ -25,9 +25,9 @@ export default function Home() {
                 <h1>Dr Rafael Engelbrecht</h1>
                 <h2>Cirurgião Vascular e Endovascular</h2>
                 <p>Rafael Engelbrecht é formado em Medicina pela Escola Paulista de Medicina - Universidade Federal de São Paulo e possui residência médica nas áreas de Cirurgia Geral, Cirurgia Vascular e Cirurgia Endovascular pela mesma Universidade.</p>
-                <button className="primary">
+                <a href="#areas" className="button primary">
                   Saiba mais
-                </button>
+                </a>
               </div>
               <div className="col w50">
                 <img src="/images/hero__main-image.png" alt="foto do dr rafael engelbrecht"/>
@@ -41,7 +41,7 @@ export default function Home() {
           <h1>Áreas de Atuação</h1>
           <h2>PRINCIPAIS ATUAÇÕES, TÉCNICAS E ÁREAS DE ATENDIMENTO ESPECIALIZADO</h2>
           <div className="row">
-            <div className="col w50">
+            <div className="col areas__text">
               <div className="area">
                 <h3>Cirurgia Vascular e Endovascular</h3>
                 <ul>
@@ -85,7 +85,7 @@ export default function Home() {
                 Veja mais no Linkedin
               </a>
             </div>
-            <div className="col w50 areas__ilustracao">  
+            <div className="col areas__ilustracao">  
               <img src="/images/ilustracao__areas.png" />
             </div>
           </div>
