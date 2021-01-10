@@ -24,6 +24,7 @@ export default function Home() {
               <div className="col w50">
                 <h1>Dr Rafael Engelbrecht</h1>
                 <h2>Cirurgião Vascular e Endovascular</h2>
+                <h3>CRM 156519 | RQE 88339 | RQE 883391</h3>
                 <p>Rafael Engelbrecht é formado em Medicina pela Escola Paulista de Medicina - Universidade Federal de São Paulo e possui residência médica nas áreas de Cirurgia Geral, Cirurgia Vascular e Cirurgia Endovascular pela mesma Universidade.</p>
                 <a href="#areas" className="button primary">
                   Saiba mais
@@ -98,31 +99,28 @@ export default function Home() {
         <h2>CURSOS DE GRADUAÇÃO, PÓS GRADUAÇÃO, ESPECIALIZAÇÕES E RESIDÊNCIAS</h2>
         <div className="row">
           <div className="col w50">
-            <div className="row">
-              <div className="col w50">
-                <img src="/images/marca__epm.png" alt="marca da escola paulista de medicina - escudo mostrando uma cobra enrolana num tronco de árvore"/>
-              </div>
-              <div className="col w50">
-                <img src="/images/marca__unifesp.png" alt="marca da unifesp - fachada estilizada do prédio" />
-              </div>
+            <div className="formacao__logos">
+                <img src="/images/marca__epm.png" alt="marca da escola paulista de medicina - escudo mostrando uma cobra enrolana num tronco de árvore" className="logo-epm"/>
+                <img src="/images/marca__unifesp.png" alt="marca da unifesp - fachada estilizada do prédio" className="logo-unifesp"/>
             </div>
-            <div col="row">
+            <div className="row formacao__cursos">
                 <ul>
                   <li>Graduação em Medicina</li>
                   <li>Residência em Cirurgia Geral</li>
                   <li>Residência em Cirurgia Vascular</li>
                   <li>Residência em Cirurgia Endovascular</li>
                 </ul>
-                <a href="http://lattes.cnpq.br/" target="_blank" className="button secondary">
-                  <img src="/images/icon__lattes.svg" alt="marca da plataforma lattes" />
-                  Currículo Lattes
-                </a>
+                
             </div>
           </div>
-          <div className="col w50">
+          <div className="col w50 formacao__detalhes">
             <p>Ganhador do  <strong>2º Prêmio Emil Burihan</strong> da Sociedade Brasileira de Angiologia e Cirurgia Vascular no ano de 2016 (3º lugar).</p>
             <p>Possui experiência de trabalho no Hospital do Rim, com pacientes transplantados renais em vias de acesso para hemodiálise. </p>
             <p>Atualmente, trabalha como Cirurgião Vascular e Endovascular no Hospital 9 de Julho com pacientes internados, retaguarda de Pronto Socorro, cirurgias eletivas e consultas ambulatoriais.</p>
+            <a href="http://lattes.cnpq.br/" target="_blank" className="button secondary">
+                  <img src="/images/icon__lattes.svg" alt="marca da plataforma lattes" />
+                  Currículo Lattes
+                </a>
           </div>
         </div>
       </div>
@@ -133,7 +131,7 @@ export default function Home() {
         <h1>Publicação</h1>
         <div className="row">
           <div className="col w50">
-            <img src='/images/livro.png' alt="capa do livro" style={{maxWidth:150, alignSelf: 'center'}}/>
+            <img src='/images/livro.png' alt="capa do livro" className="publicacao__livro"/>
             <div className="buttons">
             <a href="#" className='button secondary'>
               <img src="/images/icon__book.svg" alt="icone de um livro" />Amazon</a>
@@ -141,7 +139,7 @@ export default function Home() {
               <img src="/images/icon__book.svg" alt="icone de um livro" />Editora Manole</a>
               </div>
           </div>
-          <div className="col w50">
+          <div className="col w50 publicacao__text">
             <p><strong>Manual de Angiologia e Cirurgia Vascular e Endovascular (2020)</strong> - Editora Manole</p>
             <h3>Participação: </h3>
             <ul>
@@ -159,25 +157,26 @@ export default function Home() {
         <h1>Locais de Atendimento</h1>
         <div className="row">
           <div className="col w25">
-            <img src="/images/logo__haoc.svg" alt="marca do hospital alemão oswaldo cruz"/>
+           <div className="atendimento__logo"> 
+            <img src="/images/logo__haoc.svg" alt="marca do hospital alemão oswaldo cruz"/></div>
             <h3>Hospital Alemão Oswaldo Cruz</h3>
           </div>
           <div className="col w25">
-            <img src="/images/logo__hospital-sirio-libanes.svg"  alt="marca do hospital sírio libanês"/>
+            <div className="atendimento__logo"><img src="/images/logo__hospital-sirio-libanes.svg"  alt="marca do hospital sírio libanês"/></div>
             <h3>Hospital Sírio Libanês</h3>
           </div>
           <div className="col w25">
-            <img src="/images/logo__hospital-9-de-julho.svg"  alt="marca do hospital 9 de julho"/>
+            <div className="atendimento__logo"><img src="/images/logo__hospital-9-de-julho.svg"  alt="marca do hospital 9 de julho"/></div>
             <h3>Hospital 9 de Julho</h3>
           </div>
           <div className="col w25">
-            <img src="/images/logo__consultorio.svg" alt="marca do consultorio particular"/>
+            <div className="atendimento__logo"><img src="/images/logo__consultorio.svg" alt="marca do consultorio particular"/></div>
             <h3>Consultório Particular</h3>
           </div>
         </div>
       </div>
-    </div>
-    <div id="call_to_action">
+
+      <div id="call_to_action">
           <div className="cta__icon">
             <img src="/images/cta__contact.png" />
           </div>
@@ -199,7 +198,9 @@ export default function Home() {
               Marque sua consulta
             </a>
           </div>
+      </div>
     </div>
+   
     <div id="footer">
       <div className="container">
         <img src="/images/brand__white.png" alt="marca do consultaorio" />

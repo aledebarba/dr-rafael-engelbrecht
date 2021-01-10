@@ -50,7 +50,7 @@ const WithStyle = styled.div`
     box-shadow: 0px 1px 2px 1px #00000055;
     transition: all 200ms linear;
 
-    @media(min-width:768px) {
+    @media(min-width:767px) {
         flex-direction: row;
         justify-content: center;
         align-items: center;
@@ -62,7 +62,7 @@ const WithStyle = styled.div`
         left: ${props=>props.scrolled ? "-16px" : "4px"};
         transition: all 200ms linear;
         
-        @media(max-width:768px) {
+        @media(max-width:767px) {
             left: 50%;
             transform: translateX(-50%);
             top: ${props=>props.scrolled ? "8px" : "4px"};

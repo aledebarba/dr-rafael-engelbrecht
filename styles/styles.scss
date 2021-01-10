@@ -1,6 +1,6 @@
 .content {
     h1 { 
-        font-size: 2.8rem; 
+        font-size: 2.4rem; 
         line-height: 3rem;
         margin-bottom: 0;
         text-align: center;
@@ -73,13 +73,14 @@
 }
 
 .hero {
-    background-image: url(../public/images/brand__pattern.png);
-    background-size: 150px 150px;
+    background: linear-gradient(0deg, rgba(254, 242, 229, 0.8), rgba(254, 242, 229, 0.8)), url(../public/images/brand__pattern.png);
+    background-size: 250px 250px;
     min-height: 85vh;
-    padding: 160px 16px 80px 16px;
-    display: flex; 
-    justify-content: center;
+    padding: 80px 16px 80px 16px;
 
+    @media(min-width: 768px) {
+        justify-content: center;
+    }
     h1, h2 {text-align: left;}
     h1 {
         font-size: 3rem;
@@ -90,9 +91,21 @@
         text-transform: none;
         font-size: 1.8rem;
         font-weight: var(--font-semibold);
+        margin-bottom: 0;
     }
     h1, h2, p {
         padding-right: 56px;
+    }
+    h3 {
+        font-weight: var(--font-bold);
+        font-size: var(--font-small);
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        max-width: 400px;
+        margin: 0 auto;
     }
 }
 
@@ -159,8 +172,40 @@
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-}
+    display: flex;
+    align-items: center;
 
+    h2 { margin-bottom: 48px; }
+    .formacao__logos {
+        display: flex;
+        justify-content: center;
+        max-width: 380px; 
+        margin: 16px auto;
+
+        .logo-epm {
+            width: 25%;
+            height: auto;
+            margin-right: 8px;
+        }
+        .logo-unifesp {
+            width: 55%;
+
+        }
+    }
+    .formacao__cursos {
+        max-width: 380px;
+        margin: 16px auto;
+   }
+   .formacao__detalhes {
+       max-width: 380px;
+       margin: 0 auto;
+       a {
+           margin: 0 auto;
+           margin-top: 32px;
+           @media(min-width: 768px) {margin: 0;}
+       }
+   }
+}
 #publicacao {
     align-items: center;
     background-color: var(--white);
@@ -169,15 +214,40 @@
     flex-direction: column;
     justify-content: center;
     min-height:50vh;
+    display: flex;
+    align-items: center;
 
+    .publicacao__livro {
+            width: 90%;
+            max-width: 400px !important;
+            height: auto;
+            margin: 0 auto;
+    }
+
+    h1 { margin: 64px 0 32px 0; }
+    
     .buttons {
         align-self: center;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         margin-top: 16px;
+        a {
+            padding: 16px;
+        }
+    }
+
+    .publicacao__text {
+        max-width: 480px;
+        margin: 0 auto 48px auto;
+        padding: 0 32px;
     }
 }
 #atendimento {
+    background-color: var(--white);
+    h1 {
+        margin: 64px 0 32px 0;
+    }
+
     .col {
         display: flex;
     }
@@ -186,8 +256,14 @@
         width: 100px;
         margin: 0 auto;
     }
-    .col h3 {
+    h3 {
         text-align: center;
+        font-weight: 100;
+     }
+
+     .atendimento__logo {
+         height: 90px;
+         margin-top: 32px;
      }
 }
 
