@@ -284,17 +284,17 @@ export default function Home() {
             <img src="/images/cta__contact.png" />
           </div>
           <div className="cta__message">
-            Por favor, sinta-se a vontade para ligar em nossa clínica e
+            <p>Por favor, sinta-se a vontade para ligar em nossa clínica e
             conversar com o pessoal da recepção. Seu atendimento será rápido e
-            atencioso.
-            <a href="#">11 3995-9852</a>
+            atencioso.</p>
+            <a href="tel:+55-11-39959852">☎ 11 3995-9852</a>
           </div>
           <div className="cta__address">
             <img src="/images/icon__place.svg" alt="alfinete de mapa" />
             <p>Rua Pamplona, 145 cj 134 Jardim Paulista São Paulo SP</p>
           </div>
           <div className="cta__button">
-            <a href="tel:+5511952766726" className="button primary">
+            <a href="tel:tel:+55-11-39959852" className="button primary">
               <img
                 src="/images/icon__arrow-right-squared.svg"
                 alt="seta apontando para esquerda"

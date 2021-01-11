@@ -323,6 +323,9 @@
         }
 
         .cta__message {
+            margin-block-start: 0 !important;
+            margin-top: 0;
+            padding-top: 0;
             text-align: left !important;
         }
         .cta__address {
