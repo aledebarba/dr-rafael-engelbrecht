@@ -4,7 +4,9 @@
 :root {
   --blue: #023979;
   --blue-light: #3a82d4;
+  --filter-blue-light: invert(44%) sepia(94%) saturate(561%) hue-rotate(178deg) brightness(87%) contrast(89%);
   --red: #701003;
+  --filter-red: invert(12%) sepia(50%) saturate(4086%) hue-rotate(353deg) brightness(94%) contrast(106%);
   --white: #F7F4F2;
   --black: #2d2d2d;
   --purple: #2A2EA9;

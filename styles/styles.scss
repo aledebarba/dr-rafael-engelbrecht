@@ -1,38 +1,36 @@
 .content {
     h1 { 
+        color: var(--black);
         font-size: 2.4rem; 
+        font-weight: var(--font-regular);
         line-height: 3rem;
         margin-bottom: 0;
         text-align: center;
-        color: var(--black);
-        font-weight: var(--font-regular);
 
     }
     h2 {
+        color: var(--red);
         font-size: 1rem;
         font-weight: var(--font-light);
-        text-transform: uppercase;
-        color: var(--red);
         text-align: center;
+        text-transform: uppercase;
     }
     ul {
-        padding: 0;
-        margin: 0;
         list-style: square inside;
+        margin: 0;
         margin-bottom: 32px;
+        padding: 0;
     }
 
 }
 .button {
-    width: -moz-fit-content;
-    width: fit-content;
     block-size: fit-content;
-    block-size: -moz-fit-content;
+    width: fit-content;
     text-align: center;
     img {
-        width: 24px;
         height: auto;
         margin-right: 8px;
+        width: 24px;
     }
 }
 .primary {
@@ -42,7 +40,8 @@
         border-left: 2px var(--purple-light) solid;
         border-bottom: 2px var(--purple) solid;
         border-right: 2px var(--purple) solid;
-        background-color: var(--purple);
+        background: var(--purple);
+        background-size: cover;
         font-size: 1rem;
         font-weight: var(--font-semibold);
         border-radius: 9999px;
@@ -55,6 +54,7 @@
         &:hover {
             color: var(--white);
             background-color: var(--red);
+            background-image: url('/images/button__bg__veins.png');
             transition: all 200ms linear;
             border: 2px solid var(--red);
         }
@@ -65,10 +65,23 @@
     display: inline-flex;
     flex-direction: row;
     align-items: center;
-    padding: 4px;
+    margin-right: 8px;
+    border-radius: 9999px;
+    border: 2px solid var(--blue-light);
+    color: var(--blue-light);
+    padding: 6px 12px;
+
+    img {
+        filter: var(--filter-blue-light);
+    }
 
     &:hover {
-        outline: 2px solid var(--black);
+        border: 2px solid var(--red);
+        color: var(--red);
+
+        img {
+            filter: var(--filter-red);
+        }
     }
 }
 
@@ -116,6 +129,13 @@
     box-shadow: inset 0px 4px 119px rgba(132, 23, 29, 0.27);
     display: flex;
     justify-content: center;
+
+    a { 
+        margin: 16px auto;
+        @media(min-width: 768px) {
+            margin: 16px 0;
+        }
+    }
 
     .areas__text {
         justify-content: center;
@@ -195,6 +215,12 @@
     .formacao__cursos {
         max-width: 380px;
         margin: 16px auto;
+        ul {
+            list-style: none;
+            li:before {
+                content: '🎓';
+            }
+        }
    }
    .formacao__detalhes {
        max-width: 380px;
@@ -213,26 +239,27 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height:50vh;
-    display: flex;
-    align-items: center;
+    min-height:80vh;
 
     .publicacao__livro {
-            width: 90%;
-            max-width: 400px !important;
-            height: auto;
-            margin: 0 auto;
+        height: auto;
+        margin: 64px auto 0 auto;
+        max-width: 400px !important;
+        width: 90%;
     }
 
-    h1 { margin: 64px 0 32px 0; }
+    h1 { 
+        margin: 64px 0 32px 0;
+        @media(min-width: 768px) { text-align: left; }
+    }
     
     .buttons {
         align-self: center;
         display: flex;
         flex-direction: row;
         margin-top: 16px;
-        a {
-            padding: 16px;
+        @media(min-width: 768px) { 
+            align-self: flex-start;
         }
     }
 
