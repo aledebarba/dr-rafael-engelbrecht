@@ -92,27 +92,30 @@ const WithStyle = styled.div`
         }
     }
     #toggle ~ ul {
+        --color: ${props => props.scrolled ? "var(--blue)" : "var(--white)"};
+        background: var(--color);
+        background-color: var(--color);
         display: none;
         flex-direction: column;
+        list-style: none;
         margin-top: 40px;
         padding: 0;
-        list-style: none;
-        //background-color: #ffffff00;
-        display: none;
+
         @media(min-width:768px) {
+            align-items: center;
             display: flex;
             flex-direction: row;
             justify-content: center;
-            align-items: center;
             margin: 0;
         }
 
         li {
             margin: 8px 0px 8px 16px;
         }
+
         a {
-            font-weight: var(--font-semibold);
             color: ${props => props.scrolled ? "var(--white)" : "var(--blue)"};
+            font-weight: var(--font-semibold);
             transition: all 200ms ease;
             &:hover {
                 color: ${props=>props.scrolled ? "navajowhite" : "var(--red)"};
@@ -121,12 +124,10 @@ const WithStyle = styled.div`
         }
     }
     #toggle:checked ~ ul { 
-        --color: ${props => props.scrolled ? "var(--blue)" : "var(--white)"};
-        display: flex;
+        display: block;
         padding-top: 8px;
         padding-bottom: 8px;
-        background-color: var(--color);
-    };
+    }
 
     .menu__icon {
         --color: ${props => props.scrolled ? "var(--white)" : "var(--blue)"};

@@ -1,6 +1,8 @@
 import Head from 'next/head'
 
-const HTMLHeader = () => <Head>
+
+const HTMLHeader = () => {
+return(<Head>
     <title>Dr Rafael Engelbrecht</title>
     <meta name="format-detection" content="telephone=yes"/>
     <meta name="title" content="Dr Rafael Engelbrecht"/>
@@ -21,5 +23,6 @@ const HTMLHeader = () => <Head>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"/>
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-</Head>
+</Head>)
+}
 export default HTMLHeader
