@@ -1,14 +1,10 @@
-import Head from "next/head";
-import Image from "next/image";
+import HTMLHeader from "../components/htmlheader";
 import Navbar from "../components/navbar";
 
 export default function Home() {
   return (
     <div className="content">
-      <Head>
-        <title>Dr Rafael Hengelbrecht</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <HTMLHeader/>
       <Navbar
         menu={[
           { text: "Home", url: "#top" },
@@ -125,16 +121,19 @@ export default function Home() {
           <div className="row">
             <div className="col w50">
               <div className="formacao__logos">
-                <img
-                  src="/images/marca__epm.png"
-                  alt="marca da escola paulista de medicina - escudo mostrando uma cobra enrolana num tronco de árvore"
-                  className="logo-epm"
-                />
-                <img
-                  src="/images/marca__unifesp.png"
-                  alt="marca da unifesp - fachada estilizada do prédio"
-                  className="logo-unifesp"
-                />
+                <div className="logo-epm">
+                  <img
+                    src="/images/marca__epm.png"
+                    alt="marca da escola paulista de medicina - escudo mostrando uma cobra enrolana num tronco de árvore"
+                    
+                  />
+                </div>
+                <div className="logo-unifesp">
+                  <img
+                    src="/images/marca__unifesp.png"
+                    alt="marca da unifesp - fachada estilizada do prédio"
+                  />
+                </div>
               </div>
               <div className="row formacao__cursos">
                 <ul>
@@ -197,15 +196,15 @@ export default function Home() {
               <h3>Participação: </h3>
               <ul>
                 <li>
-                  Capítulo 6: Propedêutica linfática ao lado de Luis Carlos Uta
+                  <strong>Capítulo 6:</strong> Propedêutica linfática ao lado de Luis Carlos Uta
                   Nakano
                 </li>
                 <li>
-                  Capítulo 74: Complicações das angioplastias de carótida ao
+                  <strong>Capítulo 74:</strong> Complicações das angioplastias de carótida ao
                   lado de Luis Carlos Uta Nakano
                 </li>
                 <li>
-                  Capítulo 84: Angioplastia da veia cava inferior e do segmento
+                  <strong>Capítulo 84:</strong> Angioplastia da veia cava inferior e do segmento
                   ileofemoral na insuficiência venosa crônicaao lado de Samuel
                   Tomaz Araújo e Ronald Luiz Gomes Flumignan.
                 </li>
@@ -287,7 +286,8 @@ export default function Home() {
             <p>Por favor, sinta-se a vontade para ligar em nossa clínica e
             conversar com o pessoal da recepção. Seu atendimento será rápido e
             atencioso.</p>
-            <a href="tel:+55-11-39959852">☎ 11 3995-9852</a>
+            <a href="tel:+55-11-39959852">
+              <img src="/images/icon__telephone.svg"/>11 3995-9852</a>
           </div>
           <div className="cta__address">
             <img src="/images/icon__place.svg" alt="alfinete de mapa" />

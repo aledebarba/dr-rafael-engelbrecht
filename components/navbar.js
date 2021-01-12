@@ -97,7 +97,7 @@ const WithStyle = styled.div`
         margin-top: 40px;
         padding: 0;
         list-style: none;
-        background-color: #ffffff00;
+        //background-color: #ffffff00;
         display: none;
         @media(min-width:768px) {
             display: flex;
@@ -121,8 +121,11 @@ const WithStyle = styled.div`
         }
     }
     #toggle:checked ~ ul { 
+        --color: ${props => props.scrolled ? "var(--blue)" : "var(--white)"};
         display: flex;
-        background: ${props=>props.scrolled ? "var(--blue)" : "var(--white)"};
+        padding-top: 8px;
+        padding-bottom: 8px;
+        background-color: var(--color);
     };
 
     .menu__icon {
