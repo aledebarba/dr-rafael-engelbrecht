@@ -16,7 +16,7 @@ export default function Home() {
           { text: "Contato", url: "#call_to_action" },
         ]}
       />
-      <div className="container-full hero">
+      <div className="container-full hero" id="top">
         <div className="container">
           <div className="row">
             <div className="col w50">
@@ -314,7 +314,7 @@ export default function Home() {
             autoral, tanto no brasil quanto no exterior. Antes de reproduzí-lo,
             no todo ou em parte, por favor entre em contato.
           </p>
-          <a href="#top">Voltar ao inicio</a>
+          <a href="#top" className="useScroll">Voltar ao inicio</a>
         </div>
       </div>
     </div>

@@ -24,8 +24,9 @@
   scroll-behavior: smooth;
   --max-container-width: 960px;
   --gap: 16px;
-
 }
+
+* { outline: none; }
 
 html,
 body {

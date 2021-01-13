@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components'
+import useScroll from './useScroll'
 
 const Navbar = props => {
     
     const [ verticalScroll, setScroll ] = useState(0);
     useEffect (()=>{
         window.onscroll = () => {
-            // for browse compatibility purposes
+            // the next line composing value is for browse compatibility purposes
             var scrollvalue = window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0)
             setScroll(scrollvalue);
         }
+        useScroll(); // map the elements with "useScroll" classes and attach scroll behaviour to it
     }, [])
     const scrolled = verticalScroll > 200 ? true : false;
-
     const menu = props.menu
     function handleClick() {
         document.getElementById('toggle').checked=false
@@ -27,7 +28,7 @@ const Navbar = props => {
         <div className="menu__icon"></div>
         <ul>
             {menu.map(menuItem=>
-                <li key={menuItem.txt+menuItem.url}><a href={menuItem.url} onClick={()=>{handleClick()}}>{menuItem.text}</a></li>
+                <li key={menuItem.txt+menuItem.url}><a href={menuItem.url} onClick={()=>{handleClick()}} className="useScroll">{menuItem.text}</a></li>
             )}
         </ul>
     </WithStyle>  
