@@ -2,17 +2,16 @@
     h1 { 
         color: var(--black);
         font-size: 2.4rem; 
-        font-weight: var(--font-regular);
+        font-weight: var(--weight__regular);
         line-height: 3rem;
         margin-bottom: 0;
         text-align: center;
         letter-spacing: -1.5px;
-
     }
     h2 {
         color: var(--red);
         font-size: 1rem;
-        font-weight: var(--font-light);
+        font-weight: var(--weight__light);
         text-align: center;
         text-transform: uppercase;
     }
@@ -24,6 +23,7 @@
     }
 
 }
+
 .button {
     block-size: fit-content;
     width: fit-content;
@@ -35,30 +35,33 @@
         width: 24px;
     }
 }
+
 .primary {
         padding: 16px 24px;
         color: var(--white);
-        border-top: 2px var(--purple-light) solid;
-        border-left: 2px var(--purple-light) solid;
-        border-bottom: 2px var(--purple) solid;
-        border-right: 2px var(--purple) solid;
+        border-top: 2px solid var(--purple__light);
+        border-left: 2px solid var(--purple__light);
+        border-bottom: 2px solid var(--purple__dark);
+        border-right: 2px solid var(--purple__dark);
         background: var(--purple);
         background-size: cover;
-        font-size: 1rem;
-        font-weight: var(--font-semibold);
+        font-size: var(--size__regular);
+        font-weight: var(--weight__semibold);
         border-radius: 9999px;
-        outline: none;
         display: inline-block;
         width: 160px;
         max-width: 100%;
         transition: all 100ms linear;
 
         &:hover {
-            color: var(--white);
             background-color: var(--red);
             background-image: url('/images/button__bg__veins.png');
+            border-top: 2px solid var(--red__light);
+            border-right: 2px solid var(--red__dark);
+            border-bottom: 2px solid var(--red__dark);
+            border-left: 2px solid var(--red__light);
+            color: var(--white);
             transition: all 200ms linear;
-            border: 2px solid var(--red);
         }
     }
 
@@ -69,26 +72,32 @@
     align-items: center;
     margin-right: 8px;
     border-radius: 9999px;
-    border: 2px solid var(--blue-light);
-    color: var(--blue-light);
+    border: 2px solid var(--blue__light);
+    color: var(--blue__light);
     padding: 6px 12px;
+    transition: all 1500ms ease;
 
     img {
-        filter: var(--filter-blue-light);
+        filter: var(--filterto__blue__light);
+        transition: all 1500ms ease;
     }
 
     &:hover {
         border: 2px solid var(--red);
         color: var(--red);
+        transition: all 200ms ease;
 
         img {
-            filter: var(--filter-red);
+            filter: var(--filterto__red);
+            transition: all 200ms ease;
         }
     }
 }
 
 .hero {
-    background: linear-gradient(0deg, rgba(254, 242, 229, 0.8), rgba(254, 242, 229, 0.8)), url(../public/images/brand__pattern.png);
+    --color__from: rgba(254, 242, 229, 0.8);
+    --color__to:  rgba(254, 242, 229, 0.8);
+    background: linear-gradient(0deg, var(--color__from), var(--color__to)), url(../public/images/brand__pattern.png);
     background-size: 250px 250px;
     min-height: 85vh;
     padding: 80px 16px 80px 16px;
@@ -105,15 +114,15 @@
     h2 {
         text-transform: none;
         font-size: 1.8rem;
-        font-weight: var(--font-semibold);
+        font-weight: var(-text-semibold);
         margin-bottom: 0;
     }
     h1, h2, p {
         padding-right: 56px;
     }
     h3 {
-        font-weight: var(--font-bold);
-        font-size: var(--font-small);
+        font-weight: var(--weight__bold);
+        font-size: var(--size__small);
         margin: 0;
         padding: 0;
     }
@@ -128,7 +137,7 @@
     min-height: 100vh;
     padding: 80px 16px 80px 16px;
     background-color: var(--white);
-    box-shadow: inset 0px 4px 119px rgba(132, 23, 29, 0.27);
+    box-shadow: inset 0px 4px 119px var(--red__dark);
     display: flex;
     justify-content: center;
 
@@ -195,7 +204,7 @@
 #formacao {
     min-height: 100vh;
     padding: 80px 16px;
-    background-color: white;
+    background-color: var(--white);
     background-image: url("/images/section_formacao_background.jpg");
     background-size: cover;
     background-position: center center;
@@ -244,7 +253,7 @@
 #publicacao {
     align-items: center;
     background-color: var(--white);
-    box-shadow: inset 0px 4px 119px rgba(132, 23, 29, 0.27);
+    box-shadow: inset 0px 4px 119px var(--red__dark);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -279,7 +288,23 @@
     }
 }
 #atendimento {
-    background-color: var(--white);
+
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: '';
+        top: 0; left: 0;
+        bottom: -64px; right: 0;
+        background-color: #fdddbdbe;
+        background-image: url(/images/background___davinci-3.png);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+        z-index: -1;
+        opacity: 0.5;
+    }
+
     h1 {
         margin: 64px 0 32px 0;
     }
@@ -351,7 +376,7 @@
             margin: 16px auto; 
         }
         .cta__message {
-            font-size: var(--font-small);
+            font-size: var(--size__small);
             display: inline;
             margin: 16px 0;
             text-align: center;
@@ -374,7 +399,7 @@
             }
             p {
                 margin: 0; padding: 0 0 0 4px;
-                font-size: var(--font-small);
+                font-size: var(--size__small);
             }
         }
         .cta__button {
@@ -389,7 +414,8 @@
         }
        
         &:before {
-            background:rgba(184, 212, 255, 0.5); 
+            background-color: var(--blue__light); 
+            opacity: 0.5; 
             backdrop-filter: blur(15px);
             border-radius: 16px;
             position: absolute;

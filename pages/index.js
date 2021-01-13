@@ -29,7 +29,7 @@ export default function Home() {
                 médica nas áreas de Cirurgia Geral, Cirurgia Vascular e Cirurgia
                 Endovascular pela mesma Universidade.
               </p>
-              <a href="#areas" className="button primary">
+              <a href="#areas" className="button primary useScroll">
                 Saiba mais
               </a>
             </div>
@@ -213,7 +213,7 @@ export default function Home() {
               <div className="buttons">
                 <a href="https://www.manole.com.br/manual-de-angiologia-e-cirurgia-vascular-e-endovascular/p" target="_blank" className="button secondary">
                   <img src="/images/icon__book.svg" alt="icone de um livro" />
-                  Editora Manole
+                  Ed. Manole
                 </a>
                 <a href="https://www.amazon.com.br/MANUAL-ANGIOLOGIA-CIRURGIA-VASCULAR-ENDOVASCULAR/dp/8520460100" target="_blank" className="button secondary">
                   <img src="/images/icon__book.svg" alt="icone de um livro" />

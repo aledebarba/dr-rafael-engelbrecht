@@ -16,7 +16,7 @@ const Navbar = props => {
     const scrolled = verticalScroll > 200 ? true : false;
     const menu = props.menu
     function handleClick() {
-        document.getElementById('toggle').checked=false
+        document.getElementById('toggle').checked=false;
     }
 
     return (
@@ -26,7 +26,7 @@ const Navbar = props => {
         </div>
         <input type="checkbox" id="toggle" value="true"/>
         <div className="menu__icon"></div>
-        <ul>
+        <ul onClick={()=>handleClick()}>
             {menu.map(menuItem=>
                 <li key={menuItem.txt+menuItem.url}><a href={menuItem.url} onClick={()=>{handleClick()}} className="useScroll">{menuItem.text}</a></li>
             )}
@@ -96,11 +96,15 @@ const WithStyle = styled.div`
         --color: ${props => props.scrolled ? "var(--blue)" : "var(--white)"};
         background: var(--color);
         background-color: var(--color);
-        display: none;
+        display: block;
         flex-direction: column;
         list-style: none;
         margin-top: 40px;
         padding: 0;
+        transition: transform 50ms linear;
+        transform: scaleY(0);
+        transform-origin: 0 0;
+        z-index: -1;
 
         @media(min-width:768px) {
             align-items: center;
@@ -108,16 +112,25 @@ const WithStyle = styled.div`
             flex-direction: row;
             justify-content: center;
             margin: 0;
+            transform: scaleY(1);
         }
 
         li {
-            margin: 8px 0px 8px 16px;
+            margin: 8px 0px 16px 16px;
+            opacity: 0;
+            transition: all 0s linear;
+            @media(min-width:768px) { 
+                margin: 0px 8px;
+                opacity: 1;
+            }
         }
 
         a {
             color: ${props => props.scrolled ? "var(--white)" : "var(--blue)"};
             font-weight: var(--font-semibold);
             transition: all 200ms ease;
+            font-size: 0.825rem;
+            text-transform: uppercase;
             &:hover {
                 color: ${props=>props.scrolled ? "navajowhite" : "var(--red)"};
                 transition: all 200ms ease;
@@ -125,9 +138,15 @@ const WithStyle = styled.div`
         }
     }
     #toggle:checked ~ ul { 
-        display: block;
         padding-top: 8px;
         padding-bottom: 8px;
+        transform: scaleY(1);
+        transition: transform 50ms linear;
+
+        li {
+           opacity: 1;
+           transition: all 200ms linear;
+        }
     }
 
     .menu__icon {

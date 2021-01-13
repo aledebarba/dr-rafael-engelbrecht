@@ -2,31 +2,60 @@
 
 /* themming */
 :root {
+  /* colors */
   --blue: #023979;
-  --blue-light: #3a82d4;
-  --filter-blue-light: invert(44%) sepia(94%) saturate(561%) hue-rotate(178deg) brightness(87%) contrast(89%);
+  --blue__light: #3a82d4;
+  --blue__dark: #0d2c50;
+  --filterto__blue__light: invert(44%) sepia(94%) saturate(561%) hue-rotate(178deg) brightness(87%) contrast(89%);
+
   --red: #701003;
-  --filter-red: invert(12%) sepia(50%) saturate(4086%) hue-rotate(353deg) brightness(94%) contrast(106%);
+  --red__light: #d41900;
+  --red__dark: #290a06;
+  --filterto__red: invert(12%) sepia(50%) saturate(4086%) hue-rotate(353deg) brightness(94%) contrast(106%);
+
+  --purple: #30319c;
+  --purple__light: #575bd1;
+  --purple__dark:  #190e5a;
+  --filterto__purple: invert(16%) sepia(34%) saturate(5543%) hue-rotate(228deg) brightness(102%) contrast(93%);
+  
   --white: #F7F4F2;
+  --filterto__white: invert(100%) sepia(0%) saturate(5669%) hue-rotate(263deg) brightness(118%) contrast(91%);
+
   --black: #2d2d2d;
-  --purple: #2A2EA9;
-  --purple-light: #3a3fc5;
+  --filterto__black: invert(12%) sepia(16%) saturate(29%) hue-rotate(321deg) brightness(96%) contrast(84%);
+  
   /*font weigths*/
-  --font-light: 300; 
-  --font-lite: 300;
-  --font-regular: 400;
-  --font-normal: 400;
-  --font-semibold: 600;
-  --font-bold: 700;
+  --weight__light: 300; 
+  --weight__lite: var(--weight__light); /*sintax variation*/
+  --weight__regular: 400;
+  --weight__normal: 400;
+  --weight__semibold: 600;
+  --weight__bold: 700;
+  --weight__black: 700;
+  
+  /*font family*/
+  --font__custom-family: "Open Sans";
+  --font__family: var(--font__custom-family), "Segoe UI", Candara, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;
+  
   /*font sizes*/
-  --font-small: 0.8rem;
-  /*other custom properties*/
-  scroll-behavior: smooth;
+  --size__small: 0.8rem;
+  --size__menu: 0.825rem;
+  --size__normal: 1rem;
+  --size__regular: var(--size__normal);
+  --size__large: 2rem;
+  --size__xlarge: 2.5rem;
+  --size__xxlarge: 3.5rem;
+
+  /*other custom properties */
   --max-container-width: 960px;
   --gap: 16px;
 }
 
-* { outline: none; }
+
+* {
+  outline: none;
+  box-sizing: border-box;
+}
 
 html,
 body {
@@ -36,8 +65,7 @@ body {
   padding: 0;
   margin: 0;
   letter-spacing: -0.5px;
-  font-family: 'Open Sans',-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--font__family);
 }
 
 a {
@@ -45,9 +73,7 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-}
+/* grid system */
 
 .container,
 .container-full {
