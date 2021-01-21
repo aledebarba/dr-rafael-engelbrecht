@@ -1,22 +1,59 @@
+import { useState, useEffect } from "react";
 import HTMLHeader from "../components/htmlheader";
 import Navbar from "../components/navbar";
 
+import useScroll from '../components/useScroll'
 export default function Home() {
+  const [ menuSettings, setMenu ] = useState();
+  useEffect(()=>{
+    // get menu styles from css-root
+    // this function needs to be inside an use effect
+    // because document is certainly present inside it
+    const styles = getComputedStyle(document.body);
+    const color = styles.getPropertyValue('--white').trim();
+    const inverse = styles.getPropertyValue('--blue').trim();
+    const hover = styles.getPropertyValue('--red').trim();
 
+    setMenu({
+      scrollby: 400,
+      items: [
+      { text: "Home", href: "#top" },
+      { text: "Áreas de atuação", href: "#areas" },
+      { text: "Formação", href: "#formacao" },
+      { text: "Publicação", href: "#publicacao" },
+      { text: "Atendimento", href: "#atendimento" },
+      { text: "Contato", href: "#call_to_action" },
+    ],
+    settings: {
+      default: {
+          height: '80px', bgColor: color, linkColor: inverse, linkHover: hover,
+          menuIconColor: inverse, shadow: '0px 1px 3px 0px #00000055', 
+          brand: {url: '/images/brand__menu-icon.png', width: '52px', height: '52px'},
+          mobile: {bgcolor: color, height: '60px', brand: { url: '/images/brand__menu-icon.png', height: '52px', width: '52px'}
+                  }
+      },
+      scrolled: {
+          height: '60px', bgColor: inverse, linkColor: color, linkHover: 'navajowhite',
+          menuIconColor: color, shadow: '0px 3px 6px 0px #00000055', 
+          brand: {url: '/images/brand__menu-icon.png', width: '52px', height: '52px'},
+          mobile: {bgcolor: color, height: '60px', brand: {url: '/images/brand__menu-icon.png',height: '52px', width: '52px'}}
+      }
+    }
+    })
+    },[]);
   return (
     <div className="content">
       <HTMLHeader/>
-      <Navbar
-        menu={[
-          { text: "Home", url: "#top" },
-          { text: "Áreas de atuação", url: "#areas" },
-          { text: "Formação", url: "#formacao" },
-          { text: "Publicação", url: "#publicacao" },
-          { text: "Atendimento", url: "#atendimento" },
-          { text: "Contato", url: "#call_to_action" },
-        ]}
-      />
+      {menuSettings && 
+      <Navbar menuItems={menuSettings.items} settings={menuSettings.settings} scrollby={menuSettings.scrollby}/>
+      }
       <div className="container-full hero" id="top">
+        <div className="video__container">
+          <video autoPlay muted loop>  
+            <source src="http://rafaelengelbrecht.com.br/media/hero__endo-surgery.webm" type="video/webm"/>
+            <source src="http://rafaelengelbrecht.com.br/media/hero__endo-surgery.mp4" type="video/mp4"/>
+          </video>
+        </div>
         <div className="container">
           <div className="row">
             <div className="col w50">

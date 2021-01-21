@@ -24,6 +24,10 @@
   --black: #2d2d2d;
   --filterto__black: invert(12%) sepia(16%) saturate(29%) hue-rotate(321deg) brightness(96%) contrast(84%);
   
+  /* menu colors */
+  --menu-bg-default: var(--white);
+  --menu-bg-scrolled: var(--blue);
+  
   /*font weigths*/
   --weight__light: 300; 
   --weight__lite: var(--weight__light); /*sintax variation*/
