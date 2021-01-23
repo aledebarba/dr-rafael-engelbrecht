@@ -1,3 +1,5 @@
+@import './mixins.scss';
+
 .content {
     h1 { 
         color: var(--black);
@@ -11,9 +13,12 @@
     h2 {
         color: var(--red);
         font-size: 1rem;
-        font-weight: var(--weight__light);
+        font-weight: var(--weight__semibold);
         text-align: center;
         text-transform: uppercase;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
     }
     ul {
         list-style: square inside;
@@ -37,21 +42,23 @@
 }
 
 .primary {
+        display: inline-block;
+        width: 160px;
+        max-width: 100%;
         padding: 16px 24px;
+        font-size: var(--size__regular);
+        font-weight: var(--weight__semibold);
+        white-space: nowrap;
+        background-size: cover;
+        background: var(--purple);
         color: var(--white);
         border-top: 2px solid var(--purple__light);
         border-left: 2px solid var(--purple__light);
         border-bottom: 2px solid var(--purple__dark);
         border-right: 2px solid var(--purple__dark);
-        background: var(--purple);
-        background-size: cover;
-        font-size: var(--size__regular);
-        font-weight: var(--weight__semibold);
         border-radius: 9999px;
-        display: inline-block;
-        width: 160px;
-        max-width: 100%;
         transition: all 100ms linear;
+
 
         &:hover {
             background-color: var(--red);
@@ -76,10 +83,14 @@
     color: var(--blue__light);
     padding: 6px 12px;
     transition: all 1500ms ease;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 180px;
 
     img {
         filter: var(--filterto__blue__light);
         transition: all 1500ms ease;
+        width: 18px;
     }
 
     &:hover {
@@ -92,6 +103,11 @@
             transition: all 200ms ease;
         }
     }
+
+    @include phone__s { 
+        max-width: 180px;
+        img { width: 24px; }
+    }
 }
 
 .hero {
@@ -99,60 +115,135 @@
     --color__from: rgba(255, 231, 211, 0.644);
     --color__to:  rgba(226, 226, 226, 0.657);
     background-color: var(--color__from);
-    //background: radial-gradient(100% 100% at 0% 0%, var(--color__from) 27.32%, var(--color__to) 100%);
-    // url(../public/images/brand__pattern.png);
-    // background-size: 250px 250px;
-    min-height: 85vh;
+    height: 100vh;
+    width: 100%;
     padding: 80px 16px 80px 16px;
+    overflow: hidden;
 
-    @media(min-width: 768px) {
-        justify-content: center;
-    }
-    h1, h2 {text-align: left;}
     h1 {
-        font-size: 3rem;
-        line-height: 3.3rem;
-        margin-bottom: 0px;
+        font-size: 2rem;
+        line-height: 2.3rem;
+        margin-bottom: -8px;
         font-weight: var(--weight__semibold);
+        text-align: left;
+        @include phone__s {
+            font-size: 2.5rem;
+        }
     }
     h2 {
         text-transform: none;
-        font-size: 1.8rem;
+        font-size: 1rem;
         font-weight: var(--weight__semibold);
-        margin-bottom: 0;
+        margin-bottom: 16px;
+        text-align: left;
+        width: 75%;
+        @include phone__s {
+            width: 100%;
+            font-size: 1.5rem;
+        }
     }
-    h1, h2, p {
-        padding-right: 56px;
-    }
+
     h3 {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
+        margin-top: -12px;
         font-weight: var(--weight__bold);
         font-size: var(--size__small);
-        margin: 0;
-        padding: 0;
+        text-align: left;
+        spam {
+            margin-right: 8px;
+        }
+
+        @include phone__s {
+            flex-direction: row;
+            width: 75%;
+        }        
+    }
+
+    p {
+        z-index: 1;
+        display: none; 
+
+        @include phone__s {
+            width: 75%;
+            display: block;
+        }
+    }
+
+    a.button { 
+        z-index: 1;
+        margin: 32px auto 0 auto;
+        @include phone__s {
+            margin: 0px 0px 8px -8px;
+            border: 1px;
+        }
     }
 
     img {
-        max-width: 400px;
-        margin: 0 auto;
+        position: absolute;
+        bottom: 0;
+        left: 35%;
+        max-height: 70%;
+        width: auto;
+        filter: drop-shadow(-8px 8px 10px #00000044);
+        @include phone__s  { left: 20%; };
+        @include tablet    { left: 40%;}
+        @include laptop__s { 
+            left: 55%;
+            max-height: 80%;
+        }
     }
-
+    
     .video__container {
         position: absolute;
         top: 0;
         left: 0;
-        bottom: 0;
-        right: 0;
+        width: 100%;
+        height: 100%;
         overflow: hidden;
         z-index: -3;
+        object-fit: fill;
+
         video {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            min-width: 100%;
-            height: 100%;
-            min-height: 100%;
+          object-fit: cover;
+          position: absolute;
+          top: 0; 
+          left: 50%;
+          transform: translateX(-50%);  
+          height: 100%;
+          @include laptop__s {
+              height: 150%;
+          }
+          
         }
+    }
+
+    @include tablet {
+        h1 {
+            font-size: 3rem;
+            line-height: 3.3rem;
+        }
+        h2 {
+            font-size: 1.8rem;  
+        }
+        .container { 
+            justify-content: center;
+            padding-top: 64px;
+            .col {
+                margin: 0;
+                padding-left: 32px;
+               p { 
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @include desktop {
+        height: 90vh;
+        .container.col { padding: 0; }
     }
 }
 
@@ -166,7 +257,7 @@
 
     a { 
         margin: 16px auto;
-        @media(min-width: 768px) {
+        @include tablet {
             margin: 16px 0;
         }
     }
@@ -282,28 +373,36 @@
     justify-content: center;
     min-height:80vh;
 
-    .publicacao__livro {
-        height: auto;
-        margin: 64px auto 0 -8px;
-        max-width: 400px !important;
-        width: 90%;
+    
+    h1 { 
+        margin: 16px auto;
     }
 
-    h1 { 
-        margin: 64px 0 32px 0;
-        @media(min-width: 768px) { text-align: left; }
+    h2 { 
+        margin: 0px auto 32px auto; 
+        max-width: 95%;
+        @include tablet { margin-bottom: 80px; max-width: 50%;}
     }
-    
     .buttons {
         align-self: center;
         display: flex;
         flex-direction: row;
         margin-top: 16px;
-        @media(min-width: 768px) { 
+        @include tablet { 
             align-self: flex-start;
         }
     }
-
+    
+    .publicacao__livro {
+        height: auto;
+        margin: 0 auto;
+        
+        img {
+            width: 80%;
+            transform: translateX(16px);
+            @include tablet ()
+        }
+    }
     .publicacao__text {
         max-width: 480px;
         margin: 0 auto 48px auto;
@@ -364,6 +463,7 @@
     transform: translateY(48px);  
     width: calc(100vw - 64px);
     overflow: hidden;
+    backdrop-filter: blur(15px);
  
     @media(min-width: 768px) {
         flex-direction: row;

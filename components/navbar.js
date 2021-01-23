@@ -4,10 +4,9 @@ import styled from 'styled-components'
 import useScroll from '../components/useScroll'
 
 const Navbar = (props) => {
-    // get defaul values from defaultProps 
     const scrollby = props.scrollby;
     const menuItems = props.menuItems;
-    const settings = props.settings;
+    const settings = {...Navbar.defaultProps.settings, ...props.settings};
 
     const handleClick = () => { 
         document.getElementById('navbar__toggle').checked=false;
@@ -100,8 +99,8 @@ const WithStyle = styled.div`
         transform: translate(-50%, -50%);
         transition: all 150ms linear;
 
-        width: ${props => props.settings.mobile.brand.width};
-        height: ${props => props.settings.mobile.brand.height};
+        width: ${props => props.settings.brand.width};
+        height: ${props => props.settings.brand.height};
         overflow: hidden;
         background-image: ${props => "url("+props.settings.mobile.brand.url+")"};
         background-repeat: no-repeat;
@@ -130,9 +129,7 @@ const WithStyle = styled.div`
         }
     }
     #navbar__toggle ~ ul {
-        --color: ${props => props.settings.bgColor};
-        background: var(--color);
-        background-color: var(--color);
+        background-color: ${props => props.settings.bgColor};
         display: block;
         flex-direction: column;
         list-style: none;

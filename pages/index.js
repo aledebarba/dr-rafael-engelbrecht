@@ -35,7 +35,7 @@ export default function Home() {
       scrolled: {
           height: '60px', bgColor: inverse, linkColor: color, linkHover: 'navajowhite',
           menuIconColor: color, shadow: '0px 3px 6px 0px #00000055', 
-          brand: {url: '/images/brand__menu-icon.png', width: '52px', height: '52px'},
+          brand: {url: '/images/brand__menu-icon.png', width: '40px', height: '40px'},
           mobile: {bgcolor: color, height: '60px', brand: {url: '/images/brand__menu-icon.png',height: '52px', width: '52px'}}
       }
     }
@@ -56,23 +56,27 @@ export default function Home() {
         </div>
         <div className="container">
           <div className="row">
-            <div className="col w50">
+            <div className="col w50" >
               <h1>Dr Rafael Engelbrecht</h1>
               <h2>Cirurgião Vascular e Endovascular</h2>
-              <h3>CRM 156519 | RQE 88339 | RQE 883391</h3>
+                <h3>
+                  <spam>CRM 156519</spam>
+                  <spam>RQE 88339</spam>
+                  <spam>RQE 883391</spam>
+                </h3>
               <p>
-                Rafael Engelbrecht é formado em Medicina pela Escola Paulista de
+                Rafael Engelbrecht é formado em <strong>Medicina</strong> pela Escola Paulista de
                 Medicina - Universidade Federal de São Paulo e possui residência
-                médica nas áreas de Cirurgia Geral, Cirurgia Vascular e Cirurgia
-                Endovascular pela mesma Universidade.
+                médica nas áreas de <strong>Cirurgia Geral</strong>, <strong>Cirurgia Vascular e Cirurgia
+                Endovascular</strong> pela mesma Universidade.
               </p>
               <a href="#areas" className="button primary useScroll">
                 Saiba mais
               </a>
             </div>
-            <div className="col w50">
+            <div className="col w50" >
               <img
-                src="/images/hero__main-image.png"
+                src="/images/hero__doctor-photo.png"
                 alt="foto do dr rafael engelbrecht"
               />
             </div>
@@ -134,13 +138,14 @@ export default function Home() {
                   <li>Check-up vascula</li>
                 </ul>
               </div>
+              
               <a
                 href="https://www.linkedin.com/in/rafael-engelbrecht-ba271961/"
                 target="_blank"
                 className="button secondary"
               >
                 <img src="/images/icon__linkedin.svg" alt="logo do linkedin" />
-                Veja mais no Linkedin
+                LinkedIn 
               </a>
             </div>
             <div className="col areas__ilustracao">
@@ -215,23 +220,22 @@ export default function Home() {
 
       <div id="publicacao">
         <div className="container">
+          <h1>Publicação</h1>
+          <h2>
+               Manual de Angiologia e Cirurgia Vascular e Endovascular (2020)
+                - Editora Manole
+          </h2>
           <div className="row">
-            <div className="col w50">
+
+            <div className="col w50 publicacao__livro">
               <img
                 src="/images/livro.png"
-                alt="capa do livro"
-                className="publicacao__livro"
+                alt="capa do livro"                
               />
             </div>
             <div className="col w50 publicacao__text">
-              <h1>Publicação</h1>
-              <p>
-                <strong>
-                  Manual de Angiologia e Cirurgia Vascular e Endovascular (2020)
-                </strong>{" "}
-                - Editora Manole
-              </p>
-              <h3>Participação: </h3>
+              
+              <h3>Participações: </h3>
               <ul>
                 <li>
                   <strong>Capítulo 6:</strong> Propedêutica linfática ao lado de Luis Carlos Uta

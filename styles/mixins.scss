@@ -1,0 +1,62 @@
+@mixin phone__xs {
+    @media (min-width: 280px) {
+        @content;
+    }
+}
+
+@mixin phone__s {
+    @media (min-width: 360px) {
+        @content;
+    }
+}
+
+
+@mixin phone__m {
+    @media (min-width: 480px) {
+        @content;
+    }
+}
+
+
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin tablet__h {
+    @media (min-width: 840px) {
+        @content; 
+    }
+}
+
+@mixin laptop__s {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin laptop__h {
+    @media (min-width: 1366px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1440px) {
+        @content;
+    }
+}
+
+@mixin desktop__hd {
+    @media (min-width: 1920px) {
+        @content;
+    }    
+}
+
+@mixin desktop__2k {
+    @media (min-width: 2560px) {
+        @content;
+    }
+}
+
