@@ -135,7 +135,7 @@ export default function Home() {
                     Doenças/Síndromes reumatológicas e auto-imunes com
                     acometimento vascular
                   </li>
-                  <li>Check-up vascula</li>
+                  <li>Check-up vascular</li>
                 </ul>
               </div>
               
@@ -180,10 +180,10 @@ export default function Home() {
               </div>
               <div className="row formacao__cursos">
                 <ul>
-                  <li>Graduação em Medicina</li>
-                  <li>Residência em Cirurgia Geral</li>
-                  <li>Residência em Cirurgia Vascular</li>
-                  <li>Residência em Cirurgia Endovascular</li>
+                  <li>Graduação em Medicina <strong></strong></li>
+                  <li>Residência em Cirurgia <strong></strong>Geral</li>
+                  <li>Residência em Cirurgia Vascular<strong>2015 - 2017</strong></li>
+                  <li>Residência em Cirurgia Endovascular</li><strong>2017 - 2018</strong>
                 </ul>
               </div>
             </div>
@@ -247,8 +247,7 @@ export default function Home() {
                 </li>
                 <li>
                   <strong>Capítulo 84:</strong> Angioplastia da veia cava inferior e do segmento
-                  ileofemoral na insuficiência venosa crônicaao lado de Samuel
-                  Tomaz Araújo e Ronald Luiz Gomes Flumignan.
+                  ileofemoral na insuficiência venosa crônica ao lado de Samuel Tomaz Araújo e Ronald Luiz Gomes Flumignan.
                 </li>
               </ul>
               <div className="buttons">
@@ -329,14 +328,14 @@ export default function Home() {
             conversar com o pessoal da recepção. Seu atendimento será rápido e
             atencioso.</p>
             <a href="tel:+55-11-39959852">
-              <img src="/images/icon__telephone.svg"/>11 3995-9852</a>
+              <img src="/images/icon__telephone.svg"/>11 95276-6726</a>
           </div>
           <div className="cta__address">
             <img src="/images/icon__place.svg" alt="alfinete de mapa" />
             <p>Rua Pamplona, 145 cj 134 Jardim Paulista São Paulo SP</p>
           </div>
           <div className="cta__button">
-            <a href="tel:tel:+55-11-39959852" className="button primary">
+            <a href="tel:tel:+55-11-952766726" className="button primary">
               <img
                 src="/images/icon__arrow-right-squared.svg"
                 alt="seta apontando para esquerda"
