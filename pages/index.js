@@ -56,7 +56,7 @@ export default function Home() {
         </div>
         <div className="container">
           <div className="row">
-            <div className="col w50" >
+            <div className="col" >
               <h1>Dr Rafael Engelbrecht</h1>
               <h2>Cirurgião Vascular e Endovascular</h2>
                 <h3>
@@ -74,12 +74,10 @@ export default function Home() {
                 Saiba mais
               </a>
             </div>
-            <div className="col w50" >
-              <img
+            <img
                 src="/images/hero__doctor-photo.png"
                 alt="foto do dr rafael engelbrecht"
               />
-            </div>
           </div>
         </div>
       </div>
@@ -179,11 +177,23 @@ export default function Home() {
                 </div>
               </div>
               <div className="row formacao__cursos">
-                <ul>
-                  <li>Graduação em Medicina <strong></strong></li>
-                  <li>Residência em Cirurgia <strong></strong>Geral</li>
-                  <li>Residência em Cirurgia Vascular<strong>2015 - 2017</strong></li>
-                  <li>Residência em Cirurgia Endovascular</li><strong>2017 - 2018</strong>
+                <ul className="timeline-vertical">
+                  <li>
+                    <h1>2007-2012</h1>
+                    <p>Gradualção em <strong>Medicina</strong></p>
+                  </li>
+                  <li>
+                    <h1>2013 - 2015</h1>
+                    <p>Residência em <strong>Cirurgia&nbsp;Geral</strong></p>
+                  </li>
+                  <li>
+                    <h1>2015 - 2017</h1>
+                    <p>Residência em <strong>Cirurgia&nbsp;Vascular</strong></p>
+                  </li>
+                  <li>
+                    <h1>2017 - 2018</h1>
+                    <p>Residência em <strong>Cirurgia&nbsp;Endovascular</strong></p>
+                  </li>
                 </ul>
               </div>
             </div>
