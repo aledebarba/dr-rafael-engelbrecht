@@ -1,126 +1,85 @@
 import { useState, useEffect } from "react";
 import HTMLHeader from "../components/htmlheader";
 import Navbar from "../components/navbar";
-import expose2CSS from '../components/expose2CSS'
 
+import useScroll from '../components/useScroll'
 export default function Home() {
-  const [menuSettings, setMenu] = useState();
-  useEffect(() => {
+  const [ menuSettings, setMenu ] = useState();
+  useEffect(()=>{
     // get menu styles from css-root
     // this function needs to be inside an use effect
     // because document is certainly present inside it
     const styles = getComputedStyle(document.body);
-    const color = styles.getPropertyValue("--white").trim();
-    const inverse = styles.getPropertyValue("--blue").trim();
-    const hover = styles.getPropertyValue("--red").trim();
-    expose2CSS();
+    const color = styles.getPropertyValue('--white').trim();
+    const inverse = styles.getPropertyValue('--blue').trim();
+    const hover = styles.getPropertyValue('--red').trim();
+
     setMenu({
       scrollby: 400,
       items: [
-        { text: "Home", href: "#top" },
-        { text: "Áreas de atuação", href: "#areas" },
-        { text: "Formação", href: "#formacao" },
-        { text: "Publicação", href: "#publicacao" },
-        { text: "Atendimento", href: "#atendimento" },
-        { text: "Contato", href: "#call_to_action" },
-      ],
-      settings: {
-        default: {
-          height: "80px",
-          bgColor: color,
-          linkColor: inverse,
-          linkHover: hover,
-          menuIconColor: inverse,
-          shadow: "0px 1px 3px 0px #00000055",
-          brand: {
-            url: "/images/brand__menu-icon.png",
-            width: "52px",
-            height: "52px",
-          },
-          mobile: {
-            bgcolor: color,
-            height: "60px",
-            brand: {
-              url: "/images/brand__menu-icon.png",
-              height: "52px",
-              width: "52px",
-            },
-          },
-        },
-        scrolled: {
-          height: "60px",
-          bgColor: inverse,
-          linkColor: color,
-          linkHover: "navajowhite",
-          menuIconColor: color,
-          shadow: "0px 3px 6px 0px #00000055",
-          brand: {
-            url: "/images/brand__menu-icon.png",
-            width: "40px",
-            height: "40px",
-          },
-          mobile: {
-            bgcolor: color,
-            height: "60px",
-            brand: {
-              url: "/images/brand__menu-icon.png",
-              height: "52px",
-              width: "52px",
-            },
-          },
-        },
+      { text: "Home", href: "#top" },
+      { text: "Áreas de atuação", href: "#areas" },
+      { text: "Formação", href: "#formacao" },
+      { text: "Publicação", href: "#publicacao" },
+      { text: "Atendimento", href: "#atendimento" },
+      { text: "Contato", href: "#call_to_action" },
+    ],
+    settings: {
+      default: {
+          height: '80px', bgColor: color, linkColor: inverse, linkHover: hover,
+          menuIconColor: inverse, shadow: '0px 1px 3px 0px #00000055', 
+          brand: {url: '/images/brand__menu-icon.png', width: '52px', height: '52px'},
+          mobile: {bgcolor: color, height: '60px', brand: { url: '/images/brand__menu-icon.png', height: '52px', width: '52px'}
+                  }
       },
-    });
-  }, []);
+      scrolled: {
+          height: '60px', bgColor: inverse, linkColor: color, linkHover: 'navajowhite',
+          menuIconColor: color, shadow: '0px 3px 6px 0px #00000055', 
+          brand: {url: '/images/brand__menu-icon.png', width: '40px', height: '40px'},
+          mobile: {bgcolor: color, height: '60px', brand: {url: '/images/brand__menu-icon.png',height: '52px', width: '52px'}}
+      }
+    }
+    })
+    },[]);
   return (
     <div className="content">
-      <HTMLHeader />
-      {menuSettings && (
-        <Navbar
-          menuItems={menuSettings.items}
-          settings={menuSettings.settings}
-          scrollby={menuSettings.scrollby}
-        />
-      )}
-      <div className="hero" id="top">
+      <HTMLHeader/>
+      {menuSettings && 
+      <Navbar menuItems={menuSettings.items} settings={menuSettings.settings} scrollby={menuSettings.scrollby}/>
+      }
+      <div className="container-full hero" id="top">
         <div className="video__container">
-          <video autoPlay muted loop>
-            <source
-              src="http://rafaelengelbrecht.com.br/media/hero__endo-surgery.webm"
-              type="video/webm"
-            />
-            <source
-              src="http://rafaelengelbrecht.com.br/media/hero__endo-surgery.mp4"
-              type="video/mp4"
-            />
+          <video autoPlay muted loop>  
+            <source src="http://rafaelengelbrecht.com.br/media/hero__endo-surgery.webm" type="video/webm"/>
+            <source src="http://rafaelengelbrecht.com.br/media/hero__endo-surgery.mp4" type="video/mp4"/>
           </video>
         </div>
-        <div className="hero__info-container">
-            <div className="hero__info">
+        <div className="container">
+          <div className="row">
+            <div className="col" >
               <h1>Dr Rafael Engelbrecht</h1>
               <h2>Cirurgião Vascular e Endovascular</h2>
-              <h3>
-                <spam>CRM 156519</spam>
-                <spam>RQE 88339</spam>
-                <spam>RQE 883391</spam>
-              </h3>
+                <h3>
+                  <spam>CRM 156519</spam>
+                  <spam>RQE 88339</spam>
+                  <spam>RQE 883391</spam>
+                </h3>
               <p>
-                Rafael Engelbrecht é formado em <strong>Medicina</strong> pela
-                Escola Paulista de Medicina - Universidade Federal de São Paulo e
-                possui residência médica nas áreas de{" "}
-                <strong>Cirurgia Geral</strong>,{" "}
-                <strong>Cirurgia Vascular e Cirurgia Endovascular</strong> pela
-                mesma Universidade.
+                Rafael Engelbrecht é formado em <strong>Medicina</strong> pela Escola Paulista de
+                Medicina - Universidade Federal de São Paulo e possui residência
+                médica nas áreas de <strong>Cirurgia Geral</strong>, <strong>Cirurgia Vascular e Cirurgia
+                Endovascular</strong> pela mesma Universidade.
               </p>
+              <a href="#areas" className="button primary useScroll">
+                Saiba mais
+              </a>
             </div>
-            <a href="#areas" className="button primary useScroll">
-              Saiba mais
-            </a>
+            <img
+                src="/images/hero__doctor-photo.png"
+                alt="foto do dr rafael engelbrecht"
+              />
+          </div>
         </div>
-        <img className="hero__image"
-          src="/images/hero__main-image.png"
-          alt="foto do dr rafael engelbrecht"
-        />
       </div>
 
       <div id="areas">
@@ -177,14 +136,14 @@ export default function Home() {
                   <li>Check-up vascular</li>
                 </ul>
               </div>
-
+              
               <a
                 href="https://www.linkedin.com/in/rafael-engelbrecht-ba271961/"
                 target="_blank"
                 className="button secondary"
               >
                 <img src="/images/icon__linkedin.svg" alt="logo do linkedin" />
-                LinkedIn
+                LinkedIn 
               </a>
             </div>
             <div className="col areas__ilustracao">
@@ -207,6 +166,7 @@ export default function Home() {
                   <img
                     src="/images/marca__epm.png"
                     alt="marca da escola paulista de medicina - escudo mostrando uma cobra enrolana num tronco de árvore"
+                    
                   />
                 </div>
                 <div className="logo-unifesp">
@@ -220,27 +180,19 @@ export default function Home() {
                 <ul className="timeline-vertical">
                   <li>
                     <h1>2007 - 2012</h1>
-                    <p>
-                      Gradualção em <strong>Medicina</strong>
-                    </p>
+                    <p>Gradualção em <strong>Medicina</strong></p>
                   </li>
                   <li>
                     <h1>2013 - 2015</h1>
-                    <p>
-                      Residência em <strong>Cirurgia&nbsp;Geral</strong>
-                    </p>
+                    <p>Residência em <strong>Cirurgia&nbsp;Geral</strong></p>
                   </li>
                   <li>
                     <h1>2015 - 2017</h1>
-                    <p>
-                      Residência em <strong>Cirurgia&nbsp;Vascular</strong>
-                    </p>
+                    <p>Residência em <strong>Cirurgia&nbsp;Vascular</strong></p>
                   </li>
                   <li>
                     <h1>2017 - 2018</h1>
-                    <p>
-                      Residência em <strong>Cirurgia&nbsp;Endovascular</strong>
-                    </p>
+                    <p>Residência em <strong>Cirurgia&nbsp;Endovascular</strong></p>
                   </li>
                 </ul>
               </div>
@@ -280,45 +232,40 @@ export default function Home() {
         <div className="container">
           <h1>Publicação</h1>
           <h2>
-            Manual de Angiologia e Cirurgia Vascular e Endovascular (2020) -
-            Editora Manole
+               Manual de Angiologia e Cirurgia Vascular e Endovascular (2020)
+                - Editora Manole
           </h2>
           <div className="row">
+
             <div className="col w50 publicacao__livro">
-              <img src="/images/livro.png" alt="capa do livro" />
+              <img
+                src="/images/livro.png"
+                alt="capa do livro"                
+              />
             </div>
             <div className="col w50 publicacao__text">
+              
               <h3>Participações: </h3>
               <ul>
                 <li>
-                  <strong>Capítulo 6:</strong> Propedêutica linfática ao lado de
-                  Luis Carlos Uta Nakano
+                  <strong>Capítulo 6:</strong> Propedêutica linfática ao lado de Luis Carlos Uta
+                  Nakano
                 </li>
                 <li>
-                  <strong>Capítulo 74:</strong> Complicações das angioplastias
-                  de carótida ao lado de Luis Carlos Uta Nakano
+                  <strong>Capítulo 74:</strong> Complicações das angioplastias de carótida ao
+                  lado de Luis Carlos Uta Nakano
                 </li>
                 <li>
-                  <strong>Capítulo 84:</strong> Angioplastia da veia cava
-                  inferior e do segmento ileofemoral na insuficiência venosa
-                  crônica ao lado de Samuel Tomaz Araújo e Ronald Luiz Gomes
-                  Flumignan.
+                  <strong>Capítulo 84:</strong> Angioplastia da veia cava inferior e do segmento
+                  ileofemoral na insuficiência venosa crônica ao lado de Samuel Tomaz Araújo e Ronald Luiz Gomes Flumignan.
                 </li>
               </ul>
               <div className="buttons">
-                <a
-                  href="https://www.manole.com.br/manual-de-angiologia-e-cirurgia-vascular-e-endovascular/p"
-                  target="_blank"
-                  className="button secondary"
-                >
+                <a href="https://www.manole.com.br/manual-de-angiologia-e-cirurgia-vascular-e-endovascular/p" target="_blank" className="button secondary">
                   <img src="/images/icon__book.svg" alt="icone de um livro" />
                   Ed. Manole
                 </a>
-                <a
-                  href="https://www.amazon.com.br/MANUAL-ANGIOLOGIA-CIRURGIA-VASCULAR-ENDOVASCULAR/dp/8520460100"
-                  target="_blank"
-                  className="button secondary"
-                >
+                <a href="https://www.amazon.com.br/MANUAL-ANGIOLOGIA-CIRURGIA-VASCULAR-ENDOVASCULAR/dp/8520460100" target="_blank" className="button secondary">
                   <img src="/images/icon__book.svg" alt="icone de um livro" />
                   Amazon
                 </a>
@@ -348,10 +295,7 @@ export default function Home() {
             </div>
             <div className="col w25">
               <div className="atendimento__logo">
-                <a
-                  href="https://www.hospitalsiriolibanes.org.br/Paginas/nova-home.aspx"
-                  target="_blank"
-                >
+                <a href="https://www.hospitalsiriolibanes.org.br/Paginas/nova-home.aspx" target="_blank">
                   <img
                     src="/images/logo__hospital-sirio-libanes.svg"
                     alt="marca do hospital sírio libanês"
@@ -362,10 +306,7 @@ export default function Home() {
             </div>
             <div className="col w25">
               <div className="atendimento__logo">
-                <a
-                  href="https://www.h9j.com.br/Paginas/default.aspx"
-                  target="_blank"
-                >
+                <a href="https://www.h9j.com.br/Paginas/default.aspx" target="_blank">
                   <img
                     src="/images/logo__hospital-9-de-julho.svg"
                     alt="marca do hospital 9 de julho"
@@ -393,15 +334,11 @@ export default function Home() {
             <img src="/images/cta__contact.png" />
           </div>
           <div className="cta__message">
-            <p>
-              Por favor, sinta-se a vontade para ligar em nossa clínica e
-              conversar com o pessoal da recepção. Seu atendimento será rápido e
-              atencioso.
-            </p>
+            <p>Por favor, sinta-se a vontade para ligar em nossa clínica e
+            conversar com o pessoal da recepção. Seu atendimento será rápido e
+            atencioso.</p>
             <a href="tel:+55-11-39959852">
-              <img src="/images/icon__telephone.svg" />
-              11 95276-6726
-            </a>
+              <img src="/images/icon__telephone.svg"/>11 95276-6726</a>
           </div>
           <div className="cta__address">
             <img src="/images/icon__place.svg" alt="alfinete de mapa" />
@@ -427,9 +364,7 @@ export default function Home() {
             autoral, tanto no brasil quanto no exterior. Antes de reproduzí-lo,
             no todo ou em parte, por favor entre em contato.
           </p>
-          <a href="#top" className="useScroll">
-            Voltar ao inicio
-          </a>
+          <a href="#top" className="useScroll">Voltar ao inicio</a>
         </div>
       </div>
     </div>

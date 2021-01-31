@@ -89,7 +89,6 @@ a {
   }
   .container {
     max-width: var(--max-container-width);
-    height: 100%;
   }
   .container-full {
     width: 100vw;

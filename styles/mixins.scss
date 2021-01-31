@@ -1,70 +1,4 @@
-@mixin phone__xs {
-    @media (min-width: 280px) {
-        @content;
-    }
-}
 
-@mixin phone__s {
-    @media (min-width: 360px) {
-        @content;
-    }
-}
-
-@mixin phone__s2tablet {
-    @media (min-width: 360px) and (max-width: 768px) {
-        @content;
-    }
-}
-
-
-@mixin phone__m {
-    @media (min-width: 480px) {
-        @content;
-    }
-}
-
-
-@mixin tablet {
-    @media (min-width: 768px) {
-        @content;
-    }
-}
-
-@mixin tablet__h {
-    @media (min-width: 840px) {
-        @content; 
-    }
-}
-
-@mixin laptop__s {
-    @media (min-width: 1280px) {
-        @content;
-    }
-}
-
-@mixin laptop__h {
-    @media (min-width: 1366px) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media (min-width: 1440px) {
-        @content;
-    }
-}
-
-@mixin desktop__hd {
-    @media (min-width: 1920px) {
-        @content;
-    }    
-}
-
-@mixin desktop__2k {
-    @media (min-width: 2560px) {
-        @content;
-    }
-}
 
 @charset "UTF-8";
 
@@ -99,12 +33,17 @@
 ///
 $breakpoints: (
   'small_phone': 320px,
+  'phone_small': 320px,
   'phone': 360px,
-  'large_phone': 375px,
+  'phone_large': 375px,
+  'large_phone': 375px, // iphone
   'small_tablet': 480px,
+  'tablet_small': 480px,
   'tablet': 768px,
   'large_tablet': 860px,
+  'tablet_large': 860px,
   'desktop': 1024px,
+  'laptop': 1280px,
   'laptop_touch': 1366px,
   'laptop_large': 1440px,
   'desktop_fullhd': 1920px,
