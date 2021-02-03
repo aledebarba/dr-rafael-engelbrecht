@@ -86,11 +86,11 @@ export default function Home() {
         <div className="video__container">
           <video autoPlay muted loop>
             <source
-              src="http://rafaelengelbrecht.com.br/media/hero__endo-surgery.webm"
+              src="https://rafaelengelbrecht.com.br/media/hero%20%20endo-surgery-vs2.webm"
               type="video/webm"
             />
             <source
-              src="http://rafaelengelbrecht.com.br/media/hero__endo-surgery.mp4"
+              src="https://rafaelengelbrecht.com.br/media/hero__endo-surgery-vs2.mp4"
               type="video/mp4"
             />
           </video>
