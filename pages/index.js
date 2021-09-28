@@ -287,8 +287,8 @@ export default function Home() {
             <p>Por favor, sinta-se a vontade para ligar em nossa clínica e
             conversar com o pessoal da recepção. Seu atendimento será rápido e
             atencioso.</p>
-            <a href="tel:+55-11-39959852">
-              <img src="/images/icon__telephone.svg"/>11 3995-9852</a>
+            <a href="tel:+55-11 9997-8610">
+              <img src="/images/icon__telephone.svg"/>11 95276-6726</a>
           </div>
           <div className="cta__address">
             <img src="/images/icon__place.svg" alt="alfinete de mapa" />
