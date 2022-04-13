@@ -393,28 +393,33 @@ export default function Home() {
             <img src="/images/cta__contact.png" />
           </div>
           <div className="cta__message">
+            <a href="https://wa.me/+5511952766726?text=Estou%20entrando%20em%20contato%20através%20do%20website%20e%20gostaria%20de%20mais%20informações%20sobre%20seus%20serviços" target="_blank" referrerPolicy="noreferrer">
             <p>
-              Por favor, sinta-se a vontade para ligar em nossa clínica e
-              conversar com o pessoal da recepção. Seu atendimento será rápido e
-              atencioso.
+              <img src="/images/icon-whatsapp.png" alt="icone do whatsapp" />
+              Por favor, sinta-se a vontade para enviar uma mensagem no whatsapp da nossa clínica e conversar com o pessoal da recepção. Seu atendimento será rápido e atencioso.
             </p>
-            <a href="tel:+55-11-39959852">
-              <img src="/images/icon__telephone.svg" />
-              11 95276-6726
             </a>
+              
           </div>
-          <div className="cta__address">
-            <img src="/images/icon__place.svg" alt="alfinete de mapa" />
-            <p>Rua Pamplona, 145 cj 134 Jardim Paulista São Paulo SP</p>
-          </div>
+          { /* CLIENTE PEDIU PARA RETIRAR O ENDEREÇO
+              <img src="/images/icon__place.svg" alt="alfinete de mapa" />
+              <div className="cta__address">
+              </div>
+              <p>Rua Pamplona, 145 cj 134 Jardim Paulista São Paulo SP</p> 
+          */}
           <div className="cta__button">
-            <a href="tel:tel:+55-11-952766726" className="button primary">
+          <a href="https://wa.me/+5511952766726?text=Estou%20entrando%20em%20contato%20através%20do%20website%20e%20gostaria%20de%20mais%20informações%20sobre%20seus%20serviços" 
+            target="_blank" 
+            referrerPolicy="noreferrer"
+            class="button primary"
+            >
+
               <img
                 src="/images/icon__arrow-right-squared.svg"
                 alt="seta apontando para esquerda"
               />
               Marque sua consulta
-            </a>
+          </a>
           </div>
         </div>
       </div>
